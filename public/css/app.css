@@ -43,3 +43,44 @@ nav {
     height: calc(92vh - 1.5rem);
     object-fit: contain;
 }
+.center-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    line-height: 2;
+}
+.login-form input {
+    height: 3rem;
+    outline: none;
+    padding: 10px;
+}
+.login-form button {
+    margin-top: 1rem;
+    width: 20%;
+    padding: 12px 16px;
+    border: none;
+    background-color: #ffb03a;
+    color: white;
+    cursor: pointer;
+}
+.register-link {
+    color: #0074d9;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+.alert-success {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: white;
+    background-color: #68d388;
+    line-height: 3rem;
+    padding: 1rem;
+}
