@@ -50,6 +50,12 @@ class AuthController extends Controller
         return redirect()->route('auth.register');
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
     public function authorize_login(Request $request)
     {
         $attributes = [
@@ -71,7 +77,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('home');
         } else {
-            $request->session()->flash('error_msg', 'Τα στοιχεία που δώσατε δεν είναι σωστά');
+            $request->session()->flash('error_msg', 'Τα στοιχεία που δώσατε είναι λάθος');
             return redirect()->back();
         }
     }

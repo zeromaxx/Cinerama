@@ -84,3 +84,7 @@ nav {
     line-height: 3rem;
     padding: 1rem;
 }
+.alert-danger{
+    text-align: center;
+    color: #ff1d58;
+}

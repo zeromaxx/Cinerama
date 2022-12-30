@@ -16,10 +16,10 @@
             {{ csrf_field() }}
             @if ($errors->any())
                 @foreach ($errors->all() as $error)
-                    <div class="alert" role="alert">{{ $error }}</div>
+                    <div class="alert-danger" role="alert">{{ $error }}</div>
                 @endforeach
             @endif
-            <label for="username">Όνομα Χρήστη</label>
+            <label for="username">Όνομα</label>
             <input required name="username" type="email" />
             <label for="password">Κωδικός</label>
             <input required name="password" type="password" />

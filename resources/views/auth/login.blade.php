@@ -12,7 +12,7 @@
 <body>
     @include('includes.navbar')
     <section class="center-section">
-        <form class="login-form" action="" method="POST">
+        <form class="login-form" action="{{ route('authorize_login') }}" method="POST">
             {{ csrf_field() }}
             <label for="username">Όνομα Χρήστη</label>
             <input required name="username" type="email" />
