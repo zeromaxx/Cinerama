@@ -77,7 +77,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->route('home');
         } else {
-            $request->session()->flash('error_msg', 'Τα στοιχεία που δώσατε είναι λάθος');
+            $request->session()->flash('error_message', 'Τα στοιχεία που δώσατε είναι λάθος');
             return redirect()->back();
         }
     }

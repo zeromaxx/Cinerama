@@ -14,6 +14,9 @@
     <section class="center-section">
         <form class="login-form" action="{{ route('authorize_login') }}" method="POST">
             {{ csrf_field() }}
+            @if (session('error_message'))
+                <div class="alert-danger">{!! session('error_message') !!}</div>
+            @endif
             <label for="username">Όνομα Χρήστη</label>
             <input required name="username" type="email" />
             <label for="password">Κωδικός</label>

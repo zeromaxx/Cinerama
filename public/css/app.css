@@ -84,7 +84,19 @@ nav {
     line-height: 3rem;
     padding: 1rem;
 }
-.alert-danger{
+.alert-danger {
     text-align: center;
     color: #ff1d58;
+}
+.seats-container {
+    display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+}
+.seats-container > div {
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+    width: 20px;
+    border: 1px solid red;
 }

@@ -3,10 +3,10 @@
           <h2><a href="{{ route('home') }}">Cinerama</a></h2>
           @if (Auth::check() && Auth::user()->role == 'admin')
               <ul class="navbar-links">
-                  <li><a href="">Εισαγωγή Ταινίας</a></li>
+                  <li><a href="{{ route('add_movie') }}">Εισαγωγή Ταινίας</a></li>
                   <li><a href="">Θέσεις</a></li>
                   <li><a href="">Κρατήσεις</a></li>
-                  <li><a href="">Κράτηση</a></li>
+                  <li><a href="{{ route('reservation') }}">Κράτηση</a></li>
               </ul>
           @endif
           @if (!Auth::check())
