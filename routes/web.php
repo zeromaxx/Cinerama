@@ -27,9 +27,13 @@ Route::post('register_user', [AuthController::class, 'register_user'])->name('re
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('reservation', [MoviesController::class, 'reservation'])->name('reservation');
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('movies', [MoviesController::class, 'movies'])->name('movies');
+    Route::get('show_reservations', [MoviesController::class, 'show_reservations'])->name('show_reservations');
     Route::get('add_movie', [MoviesController::class, 'add_movie'])->name('add_movie');
     Route::post('add_moviePost', [MoviesController::class, 'add_moviePost'])->name('add_moviePost');
+    Route::post('confirm_reservation', [MoviesController::class, 'confirm_reservation'])->name('confirm_reservation');
+    Route::post('reserve_seats_post', [MoviesController::class, 'reserve_seats_post'])->name('reserve_seats_post');
+    Route::get('reserve_movie_seats/{id}', [MoviesController::class, 'reserve_movie_seats'])->name('reserve_movie_seats');
 });

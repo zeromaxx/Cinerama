@@ -100,3 +100,70 @@ nav {
     width: 20px;
     border: 1px solid red;
 }
+.selected-seat {
+    background-color: blue;
+    color: white;
+}
+.insert-movie-form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+.show_time_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.show_time_wrapper input {
+    margin: 0.5rem 0 0.5rem 0;
+}
+.insert-movie-form h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+    text-decoration-color: #ffb03a;
+}
+.insert-movie-form input {
+    height: 3rem;
+    outline: none;
+    padding: 10px;
+    margin-bottom: 0.6rem;
+}
+.insert-movie-form input:focus {
+    border: 2px solid #ffb03a;
+}
+.insert-movie-form button {
+    margin-top: 1rem;
+    width: 20%;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+.insert-movie-form input[type="submit"] {
+    margin-top: 1rem;
+    width: 20%;
+    padding: 12px 16px;
+    border: none;
+    background-color: #ffb03a;
+    color: white;
+    cursor: pointer;
+}
+.movies-form {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.movies-form div {
+    width: 30.3%;
+    margin-right: 3%;
+}
+.movies-form div img {
+    width: 100%;
+    object-fit: cover;
+    min-height: 200px;
+}
+.playing-now-header {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-color: #ffb03a;
+    margin-top: 1rem;
+}
