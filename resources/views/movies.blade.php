@@ -19,7 +19,7 @@
 
             @foreach ($movies as $movie)
                 <div>
-                    <a style="color: red" href="reserve_movie_seats/{{ $movie['id'] }}">
+                    <a href="reserve_movie_seats/{{ $movie['id'] }}">
                         <img src="images/{{ $movie['image'] }}" />
                     </a>
                 </div>

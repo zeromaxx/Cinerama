@@ -11,8 +11,7 @@
 
 <body>
     @include('includes.navbar')
-    <h2>Κρατήσεις</h2>
-    <table>
+    <table class="reservations-table">
         <tr>
             <th>Ταινία</th>
             <th>Ώρα Προβολής</th>
@@ -20,15 +19,13 @@
             <th>Θέσεις</th>
             <th>Επιβεβαίωση Κράτησης</th>
         </tr>
-         
         @foreach ($reservations as $reservation)
             <tr>
                 <td>{{ $reservation['movie']['title'] }}</td>
-                <td> {{ $reservation['showtime'] }}</td>
+                <td>{{ $reservation['showtime'] }}</td>
                 <td>{{ $reservation['user']['username'] }}</td>
-                <td>{{ $reservation['reserved_seats'] }}</td>
-                <td>{{ $reservation['reserved_seats'] }}</td>
-                <td>
+                <td>{{ str_replace('|', ' ', $reservation['reserved_seats']) }}</td>
+                <td style="">
                     <form action="{{ route('confirm_reservation') }}" method="POST">
                         {!! csrf_field() !!}
                         <input type="hidden" name="confirmation_id" value="{{ $reservation['id'] }}">
@@ -37,7 +34,7 @@
                         @if ($reservation['confirm_reservation'] === 0)
                             <button type="submit">Επιβεβαίωση</button>
                         @else
-                            <p>Επιβεβαιώθηκε</p>
+                            <p style="color: #68d388;line-height:38px">Επιβεβαιώθηκε</p>
                         @endif
                     </form>
                 </td>

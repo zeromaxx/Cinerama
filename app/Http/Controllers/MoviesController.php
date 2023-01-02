@@ -40,8 +40,7 @@ class MoviesController extends Controller
         $movie->seats = $seats;
         $movie->save();
 
-        $request->session()->flash('success_msg', 'Επιτυχής προσθήκη ταινίας.' . $movie);
-        return view('home');
+        return redirect()->route('movies');
     }
 
     public function reserve_movie_seats($id)
@@ -51,7 +50,7 @@ class MoviesController extends Controller
             $movie = Movie::where('id', $id)->first();
             return view('reserve_movie_seats', ['movie' => $movie]);
         } else {
-            return redirect('/')->with('id_not_found', 'Movie doesnt not exist');
+            return redirect('/')->with('id_not_found', 'Η ταινία δεν υπάρχει');
         }
     }
 
@@ -85,7 +84,7 @@ class MoviesController extends Controller
 
 
         $reservation->save();
-        return view('home');
+        return back()->with('success', 'Το αίτημα κράτησης σας έγινε επιτυχώς!');
     }
 
     public function show_reservations()
@@ -116,7 +115,13 @@ class MoviesController extends Controller
         $reservation->confirm_reservation = 1;
         $reservation->save();
 
-        $reservations = Reservation::all();
-        return view('show_reservations', ['reservations' => $reservations]);
+        return redirect()->route('show_reservations');
+    }
+
+    public function my_reservations()
+    {
+        $userId = auth()->user()->id;
+        $reservations = Reservation::where('user_id', $userId)->get();
+        return view('my_reservations', ['reservations' => $reservations]);
     }
 }

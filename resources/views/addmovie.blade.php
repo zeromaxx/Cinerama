@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Προσθήκη Ταινίας</title>
     @include('includes.css')
 </head>
 
@@ -18,7 +18,7 @@
             <label for="title">Τίτλος</label>
             <input required name="title" type="text" />
             <label for="seats">Αριθμός Θέσεων</label>
-            <input required name="seats" type="number">
+            <input max="50" min="1" placeholder="Μέχρι 50 θέσεις" required name="seats" type="number">
             <div class="show_time_wrapper">
                 <button class="add_show">Προσθήκη προβολής</button>
                 <label for="date">Ημερομηνία</label>
