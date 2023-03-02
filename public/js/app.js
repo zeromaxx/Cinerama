@@ -4,6 +4,7 @@ const showtime = document.querySelector(".showtime");
 const movieSeats = document.getElementById("movie_seats");
 const times = document.querySelectorAll(".time");
 
+// Add Active class on the selected seat
 var selected = "";
 seats.forEach((seat) => {
     seat.addEventListener("click", () => {
@@ -12,10 +13,9 @@ seats.forEach((seat) => {
         let dataId = seat.getAttribute("data-id");
         selected += dataId + "|";
         movieSeats.value = selected;
-        console.log(selected);
-        console.log(selected.length);
     });
 });
+// Add Active class on the selected show time
 showtimeContainer.addEventListener("click", (e) => {
     const clicked = e.target.closest(".time");
     times.forEach((c) => c.classList.remove("selected-seat"));

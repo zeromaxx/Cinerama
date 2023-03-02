@@ -30,6 +30,8 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('movies', [MoviesController::class, 'movies'])->name('movies');
+    Route::get('schedule', [MoviesController::class, 'schedule'])->name('schedule');
+    Route::post('schedule', [MoviesController::class, 'schedule'])->name('schedule');
     Route::get('my_reservations', [MoviesController::class, 'my_reservations'])->name('my_reservations');
     Route::get('show_reservations', [MoviesController::class, 'show_reservations'])->name('show_reservations');
     Route::get('add_movie', [MoviesController::class, 'add_movie'])->name('add_movie');

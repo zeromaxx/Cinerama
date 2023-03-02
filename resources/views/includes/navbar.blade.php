@@ -4,6 +4,7 @@
           <ul class="navbar-links">
               @if (Auth::check() && Auth::user()->role == 'admin')
                   <li><a href="{{ route('add_movie') }}">Προσθήκη Ταινίας</a></li>
+                  <li><a href="{{ route('schedule') }}">Διαχείρηση Ημερομηνίων</a></li>
                   <li><a href="{{ route('show_reservations') }}">Κρατήσεις</a></li>
                   <li><a href="{{ route('movies') }}">Ταινίες</a></li>
               @endif

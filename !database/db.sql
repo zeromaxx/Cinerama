@@ -52,6 +52,16 @@ CREATE TABLE reservations (
     primary key (Id)
     );
 
+DROP TABLE IF EXISTS `schedule`;
+CREATE TABLE schedule (
+    id int not null,
+    schedule varchar(255),
+    created_at timestamp null DEFAULT null,
+    updated_at timestamp null DEFAULT null,
+    primary key (Id)
+    );
+
+INSERT INTO `schedule` VALUES (1, 'Δευτέρα εως και Σάββατο απο τις 17:00  εως και τις 12:00', NULL, '2022-04-06 18:21:35');
 
 INSERT INTO `movies` (`id`, `title`, `image`, `showtime`, `seats`, `created_at`, `updated_at`) VALUES
 (1, 'Avatar The Way Of The Water', '1672683650.jpg', '2023-01-19 20:23|2023-01-18 20:23', 44, '2023-01-02 16:20:50', '2023-01-02 16:53:45'),

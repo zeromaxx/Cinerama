@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\Reservation;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\Schedule;
 
-use function PHPUnit\Framework\isNull;
 
 class MoviesController extends Controller
 {
@@ -123,5 +122,22 @@ class MoviesController extends Controller
         $userId = auth()->user()->id;
         $reservations = Reservation::where('user_id', $userId)->get();
         return view('my_reservations', ['reservations' => $reservations]);
+    }
+
+    public function schedule(Request $request)
+    {
+        if (Auth::user()->role != 'admin') {
+            return redirect()->route('login');
+        }
+        $schedule = Schedule::where('id', 1)->first();
+        if ($request->method() == 'POST') {
+            $schedule->schedule = $request->input('schedule');
+            $schedule->save();
+            $request->session()->flash('success_msg', 'Το πρόγραμμα αποθηκεύτηκε επιτυχώς');
+        }
+        return view(
+            'schedule',
+            ['schedule' => $schedule]
+        );
     }
 }

@@ -14,6 +14,7 @@
     <table class="reservations-table">
         <tr>
             <th>Ταινία</th>
+            <th>Αφίσα</th>
             <th>Ώρα Προβολής</th>
             <th>Όνομα Πελάτη</th>
             <th>Θέσεις</th>
@@ -22,6 +23,7 @@
         @foreach ($reservations as $reservation)
             <tr>
                 <td>{{ $reservation['movie']['title'] }}</td>
+                <td><img width="50px" src="/images/{{ $reservation['movie']['image'] }}" alt=""></td>
                 <td>{{ $reservation['showtime'] }}</td>
                 <td>{{ $reservation['user']['username'] }}</td>
                 <td>{{ str_replace('|', ' ', $reservation['reserved_seats']) }}</td>

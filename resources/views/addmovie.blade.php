@@ -13,7 +13,7 @@
     @include('includes.navbar')
     <section class="center-section">
         <form class="insert-movie-form" action="{{ route('add_moviePost') }}" method="POST" enctype="multipart/form-data">
-            <h2>Προσθήκη Ταινίας</h2>
+            <h2 style="margin-bottom: 1rem;">Προσθήκη Ταινίας</h2>
             {{ csrf_field() }}
             <label for="title">Τίτλος</label>
             <input required name="title" type="text" />
