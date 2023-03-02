@@ -7,9 +7,9 @@
 
 <br/>
 
-<h3>Create an appointment</h3>
+<h3>Add Movie</h3>
 
-![My Image](!screenshots/create_appointment.png)
+![My Image](!screenshots/add_movie.png)
 
 <br/>
 
