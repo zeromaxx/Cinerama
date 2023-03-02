@@ -1,5 +1,5 @@
 <h3>Technologies:</h3>
-    <p>Laravel, Html, Css, Jquery, Javascript, Php Sql</p>
+    <p>Laravel, Html, Css, Jquery, Javascript, Php, Sql</p>
 
 <h3>Homepage</h3>
 
