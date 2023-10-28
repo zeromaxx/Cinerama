@@ -276,6 +276,10 @@ nav {
     margin: 1rem auto;
 }
 
+.active-link{
+    color: #ffb03a;
+}
+
 /* Media Queries */
 @media (max-width: 900px) {
     .navbar {
